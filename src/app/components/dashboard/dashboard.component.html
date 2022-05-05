@@ -1,0 +1,25 @@
+
+
+<h1>Welcome to Dashboard</h1>
+<form [formGroup]="dashboardform">
+        <button type="submit" (click)="onlogout()">Logout</button> 
+
+</form>
+
+<form [formGroup]="locationform">
+    <div>
+        <h1> </h1>
+        <label>Location : </label>
+            <input  type="text" formControlName="location" placeholder="Enter location" name="location" required>
+            <span class="validation" *ngIf="location && location .invalid && location .touched">Enter a valid Location</span><br>
+            <button type="submit" (click)="onlocation()">Search</button> 
+        </div>
+    </form>
+    <ul *ngFor="let item of movies_list">
+        <li>{{item}}</li>
+    </ul>
+    <!-- <label for="movie">Movie:</label>
+    <select id="movie"  class="inp">
+        <option>Select Movie</option>
+        <option *ngFor="let item of movies_list">{{item}}</option>
+        </select> -->

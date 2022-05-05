@@ -1,0 +1,82 @@
+
+
+
+.card{
+    border: none;
+    border-radius:3%;
+    width: 350px;
+    height:320px;
+    position: absolute;
+    padding: 20px;
+    top:15%;
+    left: 35%;
+    background: hsla(205, 46%, 50%, 1);
+    background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 14%, 1) 100%);
+    text-align: left;
+}
+
+input{
+    position: relative;
+    padding:5px;
+    display:grid;
+    text-align: center;
+    height:15px;
+    width: 250px;
+    left:30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    top:-20px;
+}
+label{
+    position: relative;
+    padding:5px;
+    display:grid;
+    left: 30px;
+    top:-20px;
+    color:black;
+}
+.button{
+    position: relative;
+    padding:5px;
+    top: 10px;
+    height:25px;
+    width: 70px;
+    left: 30px;
+    border-radius: 5px;
+    outline: none;
+    top:-3px;
+}
+.button1{
+    position: relative;
+    padding:5px;
+    top: 10px;
+    height:25px;
+    width: 70px;
+    left:10px;
+    border-radius: 5px;
+    outline: none;
+    top:-3px;
+}
+
+h1{
+    position: relative;
+    top:-20px;
+    left:30px;
+    color:white;
+}
+h4{
+    position:relative;
+    left:30px;
+    font-size: 17px;
+}
+.validation{
+        position: relative;
+        padding:5px;
+        left: 30px;
+        top:-20px;
+        color:red;
+}
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}

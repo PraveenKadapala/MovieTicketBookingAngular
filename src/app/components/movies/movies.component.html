@@ -1,0 +1,20 @@
+<p>movies works!</p>
+
+
+
+<form [formGroup]="movieform">
+    <div>
+        <h1> </h1>
+        <label>Movie : </label>
+            <input  type="text" formControlName="title" placeholder="Enter Movie" name="movie" required>
+            <span class="validation" *ngIf="title && title .invalid && title .touched">Enter a valid Location</span><br>
+            <button type="submit" (click)="onmovie()">Search</button> 
+        </div>
+    </form>
+    <ul *ngFor="let item of theaters_list">
+        <li>{{item}}</li>
+    </ul>
+    
+    <!-- <ul *ngFor="let movie of movies_list">
+        <li>{{movie}}</li>
+    </ul> -->

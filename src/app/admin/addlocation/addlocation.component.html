@@ -1,0 +1,49 @@
+<p>addlocation works!</p>
+
+<form [formGroup]="addlocationform">
+    <div class="card">
+            
+            <h1>Add Location</h1>
+
+            <label for="name"><b>Location</b></label> 
+            <input type="text" formControlName="location" placeholder="Enter location" pattern="[a-zA-z]+$"  name="location"  required > 
+            <span class="validation" *ngIf=" location && location.invalid && location.touched">Enter a valid location</span><br>
+        
+            <button [disabled]="addlocationform.invalid" type="submit" class="button" (click)="addlocation()">Submit</button> 
+
+    </div>
+</form>
+
+
+
+
+
+
+
+
+<!-- <form  [formGroup]="usersignupform">
+    <div class="card">
+            
+            <h1>Signup</h1>
+
+            <label for="name"><b>Name</b></label> 
+            <input type="text" #name="ngModel" placeholder="Enter Name" pattern="[a-zA-z]+$" minlength="6" name="name"  required > 
+            <span class="validation" *ngIf="name.invalid && name.touched">Enter a valid Name</span><br>
+        
+            <label for="phoneno"><b>PhoneNo</b></label> 
+            <input type="text" #phoneno="ngModel"  placeholder="Enter PhoneNo" pattern="^((\\+91-?)|0)?[0-9]{10}$"  name="phoneno" ngModel required>
+            <span class="validation" *ngIf="phoneno.invalid && phoneno.touched">Enter a valid Phoneno</span><br>
+           
+            <label for="email"><b>Email</b></label> 
+            <input  #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" placeholder="Enter Email" name="email" ngModel required >
+            <span class="validation" *ngIf="email.invalid && email.touched">Enter a valid Email</span><br>
+
+            <label for="password"><b>Password</b></label> 
+            <input  #password="ngModel" type="password" pattern='^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,16}$' placeholder="Enter Password" name="password" ngModel required>
+            <span class="validation" *ngIf="password.invalid && password.touched">Enter a valid Password with minlength 5</span><br>
+
+            <button [disabled]="signinform.invalid" type="submit" class="button" (click)="signup(signupform.value)">Signup</button> 
+
+
+    </div>
+</form> -->
