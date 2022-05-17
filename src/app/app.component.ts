@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ApicallService } from './Services/apicall.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Movie_Ticket_Booking';
+
+  constructor(public apiservice:ApicallService){}
 }

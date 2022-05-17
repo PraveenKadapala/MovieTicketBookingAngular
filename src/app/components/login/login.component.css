@@ -1,19 +1,19 @@
 
 
-
 .card{
     border: none;
     border-radius:3%;
     width: 350px;
     height:320px;
-    position: absolute;
+    position:absolute;
     padding: 20px;
-    top:15%;
-    left: 35%;
+    top:20%;
+    left: 65%;
     background: hsla(205, 46%, 50%, 1);
     background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 14%, 1) 100%);
     text-align: left;
 }
+
 
 input{
     position: relative;
@@ -35,7 +35,9 @@ label{
     left: 30px;
     top:-20px;
     color:black;
+    font-size: 20px ;
 }
+
 .button{
     position: relative;
     padding:5px;
@@ -56,7 +58,8 @@ label{
     left:10px;
     border-radius: 5px;
     outline: none;
-    top:-3px;
+    top:20px;
+
 }
 
 h1{
@@ -79,4 +82,9 @@ h4{
 }
 input.ng-invalid.ng-touched{
     border: 2px solid red;
+}
+.signup{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-right: 130px;
 }

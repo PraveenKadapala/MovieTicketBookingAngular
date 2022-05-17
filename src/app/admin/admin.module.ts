@@ -8,6 +8,8 @@ import { AddtheaterComponent } from './addtheater/addtheater.component';
 import { AddshowtimeComponent } from './addshowtime/addshowtime.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminbookingsComponent } from './adminbookings/adminbookings.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddlocationComponent,
     AddmovieComponent,
     AddtheaterComponent,
-    AddshowtimeComponent
+    AddshowtimeComponent,
+    AdminbookingsComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,

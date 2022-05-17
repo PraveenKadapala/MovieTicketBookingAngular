@@ -1,0 +1,44 @@
+
+
+
+.label1{
+cursor: pointer;
+background: rgb(226, 224, 224);
+border-radius: 3px;
+margin: 10px;
+padding: 8px;
+text-align: center;
+color: grey;
+}
+
+.h3{
+    cursor: pointer;
+    background: rgb(226, 224, 224);
+    border-radius: 3px;
+    margin: 10px;
+    padding: 8px;
+    text-align: center;
+    color: grey;
+    position: relative;
+    left:50px;
+    top:-50px;
+}
+
+.child{
+    cursor: pointer;
+    background: rgb(226, 224, 224);
+    border-radius: 3px;
+    margin: 4px;
+    padding: 10px;
+    text-align: center;
+    color: grey;
+    /* float:left; */
+    width: 200px;
+}
+.container{
+    width:500px;
+    margin-left: 430px;
+    margin-right: 500px;
+    display: grid;
+    grid-template-columns: auto auto;
+}

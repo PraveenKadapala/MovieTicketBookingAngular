@@ -1,20 +1,39 @@
-<p>movies works!</p>
 
 
-
-<form [formGroup]="movieform">
-    <div>
-        <h1> </h1>
-        <label>Movie : </label>
-            <input  type="text" formControlName="title" placeholder="Enter Movie" name="movie" required>
-            <span class="validation" *ngIf="title && title .invalid && title .touched">Enter a valid Location</span><br>
-            <button type="submit" (click)="onmovie()">Search</button> 
+<form [formGroup]="movieform" (change)="onmovie()">
+    <div class="mov">
+        <label for="title">Movie:</label>
+        <select id="title"  formControlName="title"  class="inp">
+            <option>Choose Movie</option>
+            <option *ngFor="let item of movies_list">{{item}}</option>
+            </select><br>
+            <!-- <input  type="text" formControlName="title" placeholder="Enter Movie" name="movie" required>
+            <span class="validation" *ngIf="title && title .invalid && title .touched">Enter a valid Location</span><br> -->
         </div>
     </form>
-    <ul *ngFor="let item of theaters_list">
-        <li>{{item}}</li>
+    <div class="container">
+    <ul *ngFor="let item of images_list">
+        <div><img id="image1" src="{{item}}"  (click)="onimage(item)" alt="delhi"></div>
     </ul>
+    </div>
+    <!-- <ul *ngFor="let item of theaters_list">
+        <li>{{item}}</li>
+    </ul> -->
     
     <!-- <ul *ngFor="let movie of movies_list">
         <li>{{movie}}</li>
     </ul> -->
+
+    <div class="card">
+    <tr>
+        <td>
+        <h3 style="color:rgb(57, 105, 179)">Location: <span style="color: rgb(247, 60, 14);">{{location_selected}}</span></h3>
+      </td>
+      <td>
+        <h3 style="color:rgb(57, 105, 179)">Movie: <span style="color: rgb(247, 60, 14);">{{movie}}</span></h3>
+      </td>
+      <td>
+        <button style="background:rgb(46, 105, 214);height: 30px;" type="submit" class="button1" (click)="onselect()">Select_Theater</button>
+      </td>
+    </tr>
+  </div>

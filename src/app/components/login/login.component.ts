@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApicallService } from 'src/app/Services/apicall.service';
+import { BookingService } from 'src/app/Services/booking.service';
+import { NotificationService } from 'src/app/Services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -14,14 +16,28 @@ export class LoginComponent implements OnInit {
     email :new FormControl(''),
     password : new FormControl('')
   })
-  constructor(public apicallservice:ApicallService,public router:Router) { }
+  constructor(public apicallservice:ApicallService,public bookingservice:BookingService, public router:Router,public notifyservice:NotificationService) { }
 
   login(){
     this.apicallservice.userlogin(this.loginform.value).subscribe({next:(res) =>{ 
       if(res && res['status']=="ok"){
         localStorage.setItem('token' , res['data']['token'])
         console.log("Response from API is  " , res)
-        this.router.navigate(['/dashboard']);
+        console.log(res['data']['existuser']['role'])
+        localStorage.setItem('email' , res['data']['existuser']['email'])
+        localStorage.setItem('name' , res['data']['existuser']['name'])
+        // this.bookingservice.setemail(res['data']['existuser']['email'])
+        // this.bookingservice.setname(res['data']['existuser']['name'])
+        this.apicallservice.login(true)
+        this.notifyservice.showSuccess("Login Success")
+        if(res['data']['existuser']['role']=="admin"){
+          this.apicallservice.setisadmin(true)
+          this.router.navigate(['/adminhome'])
+        }
+        else{
+          this.apicallservice.setisadmin(false)
+        this.router.navigate(['/home']);
+        }
 
       }else if(res['status']=="False"){
         console.log("Entered credentials does not match")
@@ -29,10 +45,13 @@ export class LoginComponent implements OnInit {
         
       }
     },error:(err)=>{
-      console.log("Error Occured")
+      console.log("Error Occured in login")
       alert("Error Occured")
     }
     })
+  }
+  signup(){
+    this.router.navigate(['/signup'])
   }
 
 

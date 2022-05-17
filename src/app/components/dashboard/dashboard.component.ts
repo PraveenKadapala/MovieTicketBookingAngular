@@ -10,10 +10,10 @@ import { BookingService } from 'src/app/Services/booking.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  locations_list:any=[]
+  image_list:any=[]
   
-  movies_list:any[]=[]
-
-
   locationform= new FormGroup({
     location : new FormControl('')
   })
@@ -23,11 +23,6 @@ export class DashboardComponent implements OnInit {
   constructor(public apicallservice : ApicallService, public bookingservice:BookingService,public router:Router) { }
 
   
-  onlogout(){
-    localStorage.removeItem('token')
-    this.router.navigate(['/login'])
-  }
-
 
 
 
@@ -36,20 +31,25 @@ export class DashboardComponent implements OnInit {
       if(res && res['status']=="ok"){
         console.log("Selected location is :" , res);
         const location=(res['data']['location'])
-        console.log("Selected location_id :" , location);
-        this.movies_list=[]
-          this.bookingservice.getmovies(location).subscribe({next:(response:any) =>{ 
-            console.log(response)
+        console.log("Selected location :" , location);
+        // this.image_src=res['data']['image']
+        // console.log(this.image_src)
+        // this.movies_list=[]
+        //   this.bookingservice.getmovies(location).subscribe({next:(response:any) =>{ 
+        //     console.log(response)
 
-            for(let movie of response){
-              this.movies_list.push(movie.title)
-            }
-            this.bookingservice.setmovielist(this.movies_list)
-            console.log(this.movies_list)
-          }
-          })
+        //     for(let movie of response){
+        //       this.movies_list.push(movie.title)
+        //     }
+        //     this.bookingservice.setmovielist(this.movies_list)
+        //     console.log(this.movies_list)
+        //   }
+        //   })
+        // this.bookingservice.setlocation(location)
+        localStorage.setItem('location',location)
+        this.router.navigate(['/movies'])
 
-      }else if(res['status']=="False"){
+      }else if(res['status']=="false"){
         console.log("Location not found")
         alert("Location not found")
         
@@ -61,22 +61,37 @@ export class DashboardComponent implements OnInit {
     })
 
   }
-  ngOnInit(): void {
-    if(localStorage.getItem('token')){
-      this.apicallservice.todashboard(localStorage.getItem('token')).subscribe({next:(res) =>{
-        if(res && res['status']=='ok'){
-          console.log(res)
-          alert("Welcome to dashboard")
-        }else{
-          alert("Something went wrong")
-        }
-      },error:(err) =>{
-        if(err){
-          alert("Error occured")
-        }
-      }
-      })
+
+
+  onimage(str:any){
+    console.log(str)
+    const imagejson={
+      image:str
     }
+    console.log(imagejson)
+    this.bookingservice.getlocationbyimage(imagejson).subscribe({next:(res:any) =>{ 
+      console.log(res)
+      for(let item of res){
+        // this.bookingservice.setlocation(item.location)
+        localStorage.setItem('location',item.location)
+        console.log(this.bookingservice.getlocation())
+        this.router.navigate(['/movies'])
+      }
+    },error:(err)=>{
+      console.log("Error Occured")
+      alert("Error Occured")
+    }
+    })
+  }
+  ngOnInit(): void {
+    this.bookingservice.getalllocations().subscribe({next:(res:any) =>{
+      console.log(res)
+      for(let item of res){
+        this.locations_list.push(item.location)
+        this.image_list.push(item.image)
+      }
+
+    }})
 
   }
   get location(){

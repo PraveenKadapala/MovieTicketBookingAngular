@@ -1,25 +1,22 @@
 
 
-<h1>Welcome to Dashboard</h1>
-<form [formGroup]="dashboardform">
-        <button type="submit" (click)="onlogout()">Logout</button> 
-
-</form>
-
 <form [formGroup]="locationform">
-    <div>
-        <h1> </h1>
-        <label>Location : </label>
-            <input  type="text" formControlName="location" placeholder="Enter location" name="location" required>
-            <span class="validation" *ngIf="location && location .invalid && location .touched">Enter a valid Location</span><br>
-            <button type="submit" (click)="onlocation()">Search</button> 
+    <div class="loc">
+        <label for="location">Location:</label>
+        <select id="location"  formControlName="location"  class="inp">
+            <option>Choose Location</option>
+            <option *ngFor="let item of locations_list">{{item}}</option>
+            </select><br>
+            <button type="submit" (click)="onlocation()">Select</button> 
         </div>
     </form>
-    <ul *ngFor="let item of movies_list">
-        <li>{{item}}</li>
+    <div class="container">
+     <ul *ngFor="let item of image_list">
+        <img class =image1 src="{{item}}" (click)="onimage(item)">
     </ul>
-    <!-- <label for="movie">Movie:</label>
+    </div>
+     <!-- <label for="movie">Movie:</label>
     <select id="movie"  class="inp">
         <option>Select Movie</option>
         <option *ngFor="let item of movies_list">{{item}}</option>
-        </select> -->
+        </select>  -->

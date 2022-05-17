@@ -1,6 +1,6 @@
 
 
-<form [formGroup]="loginform">
+ <form [formGroup]="loginform" class="container">
     <div class="card">
         <h1>Login </h1>
         <label>Email : </label>
@@ -12,7 +12,9 @@
             <span class="validation" *ngIf="password && password.invalid && password.touched">Enter a valid Password</span><br>
 
             <button [disabled]="loginform.invalid" class="button" type="submit" (click)="login()">Login</button> 
-
-      <h4>New User: <a routerLink="/signup"><button class="button1" type="submit">Sign up</button></a></h4>
+        <div class="signup">
+        <h4>New User: </h4>
+        <button class="button1" type="submit" (click)="signup()">Signup</button>
+        </div>
     </div>
 </form>

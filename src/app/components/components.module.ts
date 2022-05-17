@@ -9,6 +9,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MoviesComponent } from './movies/movies.component';
 import { TheatersComponent } from './theaters/theaters.component';
+import { SeatlayoutComponent } from './seatlayout/seatlayout.component';
+import { HomeComponent } from './home/home.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { BookingsComponent } from './bookings/bookings.component';
 
 
 @NgModule({
@@ -17,7 +21,11 @@ import { TheatersComponent } from './theaters/theaters.component';
     SignupComponent,
     DashboardComponent,
     MoviesComponent,
-    TheatersComponent
+    TheatersComponent,
+    SeatlayoutComponent,
+    HomeComponent,
+    ReservationComponent,
+    BookingsComponent
   ],
   imports: [
     CommonModule,

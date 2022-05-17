@@ -6,8 +6,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { AdminModule } from './admin/admin.module';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatIconModule , MatIcon} from '@angular/material/icon';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
+const materialComponents=[
 
+        MatToolbarModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatIconModule,
+        MatBadgeModule,
+        MatProgressSpinnerModule
+]
 
 
 @NgModule({
@@ -21,7 +37,10 @@ import { AdminModule } from './admin/admin.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AdminModule
+    AdminModule,
+    materialComponents,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

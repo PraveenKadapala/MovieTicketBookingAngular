@@ -6,12 +6,13 @@
     height:400px;
     position: absolute;
     padding: 20px;
-    top:10%;
-    left: 35%;
+    top:20%;
+    left: 65%;
     background: hsla(205, 46%, 50%, 1);
     background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 14%, 1) 100%);
     text-align: left;
 }
+
 
 label{
     position: relative;
