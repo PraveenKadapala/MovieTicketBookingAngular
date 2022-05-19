@@ -1,27 +1,27 @@
 
 
 #Navbar{
-    width:1368px;
+    /* width:1351px; */
+    width:101.2%;
     position: sticky;
     justify-content: space-between;
     background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 14%, 1) 100%);
-    margin-left:-10px;
+    background:rgb(32, 94, 94);
+    margin-left:-8px;
     margin-top:-10px;
 }
 
 a{
-    padding-right: 20px;
+    padding-right: 8px;
     font-size: 20px;
+
 }
 
-a.hover{
-    opacity: 50%;
-}
 .signup{
     padding-right: 70px;
 }
 .Logout{
-    padding-right: 100px;
+    padding-right: 20px;
 }
 
 .child{

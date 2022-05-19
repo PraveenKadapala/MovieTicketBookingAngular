@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  name:any=localStorage.getItem("name")
   constructor(public router:Router) { }
 login(){
   this.router.navigate(['/login'])

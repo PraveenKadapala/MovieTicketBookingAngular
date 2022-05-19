@@ -5,7 +5,7 @@
     <div>
         <label for="location">Location:</label>
         <select id="location"  formControlName="location"  class="inp">
-            <option>Select Location</option>
+            <option value="" disabled>Select Location</option>
             <option *ngFor="let item of locations_list">{{item}}</option>
             </select><br>
     </div>
@@ -15,7 +15,7 @@
     <div>
         <label for="movie">Movie:</label>
         <select id="movie"  formControlName="title"  class="inp">
-            <option>Select Movie</option>
+            <option disabled>Select Movie</option>
             <option *ngFor="let item of movies_list">{{item}}</option>
             </select><br>
             <label for="theater">Theater:</label>
@@ -42,7 +42,7 @@
           <td >
             <h3 style="color:rgb(57, 105, 179)">Theater:<span style="color: rgb(247, 60, 14);">{{item.theater}}</span></h3>
           </td>
-            <button style="background:rgb(46, 105, 214);height: 30px;" type="submit" class="button1" (click)="ondelete(item.location,item.title,item.theater)">Delete</button>
+            <button type="submit" class="button1" (click)="ondelete(item.location,item.title,item.theater)">Delete</button>
         </tr>
         </div>
   </div>

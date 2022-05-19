@@ -1,5 +1,23 @@
 
+.button1{
+    cursor: pointer;
+    width: 30%;
+    border: none;
+    border-radius:5px;
+    height: 35px;
+    width:80px;
+    background: rgb(57, 105, 179);
+    color: white;
+    margin-left: 30px;
+    padding: 10px;
+    font-size: 15px;
+  }
+.button1:hover {
+background: rgb(160, 180, 187);
+}
   .card {
+    border-radius: 10px;
+    background-color: rgb(245, 240, 240);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     padding: 2px 16px;
   }

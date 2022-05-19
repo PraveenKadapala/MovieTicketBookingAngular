@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import { Router } from '@angular/router';
 import { NotificationService } from './notification.service';
@@ -7,10 +7,11 @@ import { NotificationService } from './notification.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ApicallService {
+export class ApicallService{
 
   loggedin:any
-  admin:any=false
+  admin:any
+
   constructor(public http : HttpClient, public router: Router,public notifyservice:NotificationService) { }
 
 userlogin(userdata:any){
@@ -19,6 +20,9 @@ userlogin(userdata:any){
 
 usersignup(userdata:any){
   return this.http.post('http://localhost:9000/users/signup' , userdata)
+}
+renewaccesstoken(data:any){
+  return this.http.post('http://localhost:9000/users/renewaccesstoken' , data)
 }
 authenticate(token:any){
   const headers =new HttpHeaders({
@@ -38,6 +42,7 @@ adminauthenticate(token:any){
 userlogout(){
   this.notifyservice.showSuccess("Logout Success")
   localStorage.removeItem('token')
+  localStorage.removeItem('refreshtoken')
   localStorage.removeItem('email')
   localStorage.removeItem('name')
   localStorage.removeItem('location')
@@ -45,6 +50,7 @@ userlogout(){
   localStorage.removeItem('theater')
   localStorage.removeItem('showid')
   localStorage.removeItem('reservationid')
+  localStorage.removeItem('isadmin')
   this.loggedin=false
   this.router.navigate(['/login'])
 }
@@ -58,6 +64,8 @@ setisadmin(val:any){
 getisadmin(){
   return this.admin
 }
-  
+gettoken(){
+  return localStorage.getItem('token')
+}
 
 }

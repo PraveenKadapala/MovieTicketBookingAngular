@@ -12,8 +12,14 @@
     padding: 5px;
     border-radius: 15px;
     margin-right: 5px;
-
 }
+#image1:hover {
+    width:395px;
+    height:255px;
+    }
+#image1:hover {
+    box-shadow: 0 8px 16px 0 rgba(22, 22, 22, 0.849)
+      }
 .mov{
     border: none;
     border-radius:5px;
@@ -36,7 +42,7 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
-button{
+/* button{
     position: relative;
     padding:5px;
     top: 10px;
@@ -46,6 +52,19 @@ button{
     border-radius: 5px;
     outline: none;
     top:-5px;
+} */
+.button1{
+    cursor: pointer;
+    border: none;
+    border-radius:5px;
+    height: 35px;
+    width: 100%;
+    background: rgb(57, 105, 179);
+    color: white;
+    font-size: 15px;
+  }
+.button1:hover {
+background: rgb(160, 180, 187);
 }
 select{
     position: relative;
@@ -83,6 +102,8 @@ label{
     text-align: left;
 }
 .card {
+    border-radius: 10px;
+    background-color: rgb(245, 240, 240);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     padding: 2px 16px;
   }
@@ -97,11 +118,7 @@ label{
     left:15px;
     width: 40%;
  }
- .button1{
-    border-radius: 5px;
-    width:100px;
-    outline: none;
- }
+
   * {
     box-sizing: border-box;
   }

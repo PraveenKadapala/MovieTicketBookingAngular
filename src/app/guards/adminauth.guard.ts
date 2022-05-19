@@ -19,10 +19,23 @@ export class AdminauthGuard implements CanActivate {
           console.log(res,"Admin authentication")
           this.apicallservice.admin=true
           return true
-        }else{
-          this.router.navigate(['/home'])
-          console.log(res)
+        }else if(res['status']=="error"){
+          this.apicallservice.renewaccesstoken({refreshtoken:localStorage.getItem("refreshtoken")}).subscribe({next:(response:any)=>{
+            console.log(response,"renewaccesstoken response")
+            if(response && response['status']=="ok"){
+              localStorage.setItem('token',response['data']['accesstoken'])
+              return true
+            }else{
+              this.notifyservice.showError("Access Denied")
+              this.router.navigate(['/login'])
+              this.apicallservice.userlogout()
+              return false
+            }
+          }})
+        }
+        else if(res['status']=='notadmin'){
           this.notifyservice.showError("Access Denied")
+          this.router.navigate(['/home'])
           return false
         }
       }})

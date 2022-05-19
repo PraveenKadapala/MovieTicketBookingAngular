@@ -40,7 +40,7 @@ ondelete(location:any){
   try{
   this.adminservice.deletelocation(location).subscribe({next:(res:any)=>{
     if(res && res['status']=='ok'){
-    console.log("Deleted Location succesfully")
+    console.log("Location Deleted succesfully")
     this.notifyservice.showSuccess("Deleted Location Successfully")
     this.adminservice.alllocations().subscribe({next:(res:any)=>{
       this.locations=res

@@ -3,7 +3,7 @@
     <div class="thea">
         <label class="label1" for="title">Theater:</label>
         <select class="select1" id="title"  formControlName="theater">
-            <option>Choose Theater</option>
+            <option value="" disabled>Choose Theater</option>
             <option *ngFor="let item of theaters_list">{{item}}</option>
             </select><br>
             <!-- <input  type="text" formControlName="theater" placeholder="Enter Movie" name="movie" required>
@@ -21,7 +21,7 @@
         <div class="show">
             <label class="label2" for="shows">Shows:</label>
             <select class="select2" id="shows"  formControlName="showtiming" >
-                <option>Choose show</option>
+                <option value="" disabled>Choose show</option>
                 <option *ngFor="let item of shows_list">{{item}}</option>
                 </select><br>
         </div>
@@ -29,7 +29,7 @@
 </div>
     <div class="container">
         <ul *ngFor="let item of images_list">
-            <div><img id="image1" src="{{item}}"  (click)="onimage(item)" alt="delhi"></div>
+            <div><img id="image1" src="{{item}}"  (click)="onimage(item)" ></div>
         </ul>
     </div>
 
@@ -52,7 +52,7 @@
             <h3 style="color:rgb(57, 105, 179)">Show_time: <span style="color: rgb(247, 60, 14);">{{showtiming_selected}}</span></h3>
           </td>
           <td>
-            <button style="background:rgb(46, 105, 214);height: 30px;" type="submit" class="button" (click)="onselect()">BookSeats</button>
+            <button  type="submit" class="button1" (click)="onselect()">BookSeats</button>
           </td>
         </tr>
       </div>

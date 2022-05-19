@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { observable } from 'rxjs';
 import { ApicallService } from 'src/app/Services/apicall.service';
+import { NotificationService } from 'src/app/Services/notification.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,13 +19,13 @@ export class SignupComponent implements OnInit {
     email :new FormControl(''),
     password : new FormControl('')
   })
-  constructor(public apicallservice:ApicallService,public router:Router) { }
+  constructor(public apicallservice:ApicallService,public router:Router,public notifyservice:NotificationService) { }
 
   signup(){
       this.apicallservice.usersignup(this.signupform.value).subscribe({ next: (res)=>{
 
         if(res && res['status']=='ok' && res['data']['_id']){
-          alert("Signup Successful")
+          this.notifyservice.showSuccess("User Added Successfully")
           this.router.navigate(['/login']);
           console.log(res)
       }else if(res['status']=='error'){

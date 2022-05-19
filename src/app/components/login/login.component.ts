@@ -22,21 +22,22 @@ export class LoginComponent implements OnInit {
     this.apicallservice.userlogin(this.loginform.value).subscribe({next:(res) =>{ 
       if(res && res['status']=="ok"){
         localStorage.setItem('token' , res['data']['token'])
+        localStorage.setItem('refreshtoken' , res['data']['refreshtoken'])
         console.log("Response from API is  " , res)
         console.log(res['data']['existuser']['role'])
         localStorage.setItem('email' , res['data']['existuser']['email'])
         localStorage.setItem('name' , res['data']['existuser']['name'])
-        // this.bookingservice.setemail(res['data']['existuser']['email'])
-        // this.bookingservice.setname(res['data']['existuser']['name'])
         this.apicallservice.login(true)
         this.notifyservice.showSuccess("Login Success")
         if(res['data']['existuser']['role']=="admin"){
+          localStorage.setItem( "isadmin" , "true")
           this.apicallservice.setisadmin(true)
           this.router.navigate(['/adminhome'])
         }
         else{
+          localStorage.setItem('isadmin' , "false")
           this.apicallservice.setisadmin(false)
-        this.router.navigate(['/home']);
+          this.router.navigate(['/home']);
         }
 
       }else if(res['status']=="False"){

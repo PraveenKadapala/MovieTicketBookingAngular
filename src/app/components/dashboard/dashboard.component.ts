@@ -74,9 +74,8 @@ export class DashboardComponent implements OnInit {
       for(let item of res){
         // this.bookingservice.setlocation(item.location)
         localStorage.setItem('location',item.location)
-        console.log(this.bookingservice.getlocation())
-        this.router.navigate(['/movies'])
       }
+      this.router.navigate(['/movies'])
     },error:(err)=>{
       console.log("Error Occured")
       alert("Error Occured")

@@ -28,8 +28,14 @@
     padding: 5px;
     border-radius: 10px;
     margin-right: 5px;
-
 }
+#image1:hover {
+    width:395px;
+    height:255px;
+    }
+#image1:hover {
+    box-shadow: 0 8px 16px 0 rgba(22, 22, 22, 0.849)
+        }
 .main{
     border: none;
     border-radius:5px;
@@ -119,6 +125,8 @@
     text-align: left;
 }
 .card {
+    border-radius: 10px;
+    background-color: rgb(245, 240, 240);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     padding: 2px 16px;
   }
@@ -126,14 +134,23 @@
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
+  .button1{
+    cursor: pointer;
+    border: none;
+    border-radius:5px;
+    height: 35px;
+    width: 100%;
+    background: rgb(57, 105, 179);
+    color: white;
+    font-size: 15px;
+  }
+.button1:hover {
+background: rgb(160, 180, 187);
+}
   
  td{
     position:relative;
     width: 50%;
- }
- .button{
-    border-radius: 5px;
-    outline: none;
  }
   * {
     box-sizing: border-box;

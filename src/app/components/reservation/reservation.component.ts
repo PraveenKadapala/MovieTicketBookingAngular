@@ -23,6 +23,9 @@ export class ReservationComponent implements OnInit {
   name:any;
   constructor(public bookingservice:BookingService,public router:Router) { }
 
+  onselect(){
+    this.router.navigate(['/bookings'])
+  }
   ngOnInit(): void {
     console.log(this.bookingservice.getemail(),"email")
     const details={

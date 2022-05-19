@@ -42,3 +42,21 @@ color: grey;
     display: grid;
     grid-template-columns: auto auto;
 }
+button{
+    position: relative;
+    top:-42px;
+    left:1000px;
+}
+.button1{
+    cursor: pointer;
+    border: none;
+    border-radius:5px;
+    height: 40px;
+    width: 100px;
+    background: rgb(57, 105, 179);
+    color: white;
+    font-size: 15px;
+  }
+.button1:hover {
+background: rgb(160, 180, 187);
+}

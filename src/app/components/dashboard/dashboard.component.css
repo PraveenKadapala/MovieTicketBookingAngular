@@ -22,7 +22,7 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
-button{
+/* button{
     position: relative;
     padding:5px;
     top: 10px;
@@ -32,7 +32,24 @@ button{
     border-radius: 5px;
     outline: none;
     top:18px;
+} */
+button{
+    cursor: pointer;
+    width: 30%;
+    border: none;
+    border-radius:5px;
+    background: rgb(23, 209, 162);
+    color: white;
+    position:relative;
+    top:15px;
+    left:30px;
+    padding: 10px;
+    font-size: 15px;
+  }
+button:hover {
+background: rgb(160, 180, 187);
 }
+  
 select{
     position: relative;
     padding:5px;
@@ -85,6 +102,10 @@ label{
     width:240px;
     padding: 5px;
     border-radius: 15px;
-  
 }
- 
+.image1:hover {
+    width:245px;
+    }
+.image1:hover {
+    box-shadow: 0 8px 16px 0 rgba(22, 22, 22, 0.849)
+        }

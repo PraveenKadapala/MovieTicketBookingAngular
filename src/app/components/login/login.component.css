@@ -1,6 +1,13 @@
 
-
-.card{
+#image{
+    height: 550px;
+    width: 100%;
+}
+.container1 {
+  position: relative;
+  text-align: center;
+}
+/* .card{
     border: none;
     border-radius:3%;
     width: 350px;
@@ -36,30 +43,80 @@ label{
     top:-20px;
     color:black;
     font-size: 20px ;
+} */
+
+
+.card{
+    border: none;
+    border-radius:3%;
+    width: 350px;
+    height:340px;
+    position: absolute;
+    padding: 20px;
+    top:20%;
+    left: 65%;
+    background: hsla(205, 46%, 50%, 1);
+    background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 14%, 1) 100%);
+    text-align: left;
+}
+
+
+label{
+    position: relative;
+    padding:5px;
+    font-size: 18px;
+    display:grid;
+    left: 30px;
+    top:-20px;
+    color:aqua;
+}
+input{
+    position: relative;
+    padding:5px;
+    display:grid;
+    text-align: center;
+    height:20px;
+    width: 250px;
+    left:30px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    top:-20px;
 }
 
 .button{
-    position: relative;
-    padding:5px;
-    top: 10px;
-    height:25px;
-    width: 70px;
-    left: 30px;
-    border-radius: 5px;
-    outline: none;
-    top:-3px;
+    cursor: pointer;
+    width: 30%;
+    border: none;
+    border-radius:5px;
+    background: rgb(23, 209, 162);
+    color: white;
+    position:relative;
+    top:-10px;
+    left:30px;
+    padding: 10px;
+    font-size: 15px;
+  }
+.button:hover {
+background: rgb(160, 180, 187);
 }
+  
 .button1{
-    position: relative;
-    padding:5px;
-    top: 10px;
-    height:25px;
-    width: 70px;
-    left:10px;
-    border-radius: 5px;
-    outline: none;
-    top:20px;
-
+    cursor: pointer;
+    width: 30%;
+    border: none;
+    border-radius:5px;
+    height: 35px;
+    width:80px;
+    background: rgb(57, 105, 179);
+    color: white;
+    margin-left: 40px;
+    margin-top: 13px;
+    padding: 10px;
+    font-size: 15px;
+  }
+.button1:hover {
+background: rgb(160, 180, 187);
 }
 
 h1{
@@ -69,8 +126,9 @@ h1{
     color:white;
 }
 h4{
+    color:aqua;
     position:relative;
-    left:30px;
+    left:34px;
     font-size: 17px;
 }
 .validation{

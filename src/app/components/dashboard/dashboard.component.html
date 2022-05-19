@@ -3,8 +3,8 @@
 <form [formGroup]="locationform">
     <div class="loc">
         <label for="location">Location:</label>
-        <select id="location"  formControlName="location"  class="inp">
-            <option>Choose Location</option>
+        <select id="location"  formControlName="location"  class="inp" >
+            <option value="" disabled>Choose Location</option>
             <option *ngFor="let item of locations_list">{{item}}</option>
             </select><br>
             <button type="submit" (click)="onlocation()">Select</button> 
