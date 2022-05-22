@@ -11,10 +11,11 @@
             <span class="validation" *ngIf="title && title .invalid && title .touched">Enter a valid Location</span><br> -->
         </div>
     </form>
-    <div class="container">
-    <ul *ngFor="let item of images_list">
+    <div class="row">
+        <div class="row" *ngIf="images_list" >
+            <div class="column" *ngFor="let item of images_list">
         <div><img id="image1" src="{{item}}"  (click)="onimage(item)" ></div>
-    </ul>
+        </div>
     </div>
     <!-- <ul *ngFor="let item of theaters_list">
         <li>{{item}}</li>

@@ -1,11 +1,10 @@
 
 #image{
-    height: 550px;
+    height: 100vh;
     width: 100%;
 }
 .container1 {
   position: relative;
-  text-align: center;
 }
 /* .card{
     border: none;
@@ -48,14 +47,12 @@ label{
 
 .card{
     border: none;
-    border-radius:3%;
-    width: 350px;
-    height:340px;
+    border-radius: 3%;
+    width: 396px;
+    height:400px;
     position: absolute;
-    padding: 20px;
     top:20%;
-    left: 65%;
-    background: hsla(205, 46%, 50%, 1);
+    left: 35%;
     background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 14%, 1) 100%);
     text-align: left;
 }
@@ -66,8 +63,8 @@ label{
     padding:5px;
     font-size: 18px;
     display:grid;
-    left: 30px;
-    top:-20px;
+    left: 50px;
+    top:10px;
     color:aqua;
 }
 input{
@@ -77,11 +74,11 @@ input{
     text-align: center;
     height:20px;
     width: 250px;
-    left:30px;
+    left:50px;
     border-radius: 5px;
     outline: none;
     border: none;
-    top:-20px;
+    top:10px;
 }
 
 .button{
@@ -92,8 +89,8 @@ input{
     background: rgb(23, 209, 162);
     color: white;
     position:relative;
-    top:-10px;
-    left:30px;
+    top:25px;
+    left:50px;
     padding: 10px;
     font-size: 15px;
   }
@@ -110,8 +107,8 @@ background: rgb(160, 180, 187);
     width:80px;
     background: rgb(57, 105, 179);
     color: white;
-    margin-left: 40px;
-    margin-top: 13px;
+    margin-left: 50px;
+    margin-top: 53px;
     padding: 10px;
     font-size: 15px;
   }
@@ -121,21 +118,22 @@ background: rgb(160, 180, 187);
 
 h1{
     position: relative;
-    top:-20px;
-    left:30px;
+    top:10px;
+    left:50px;
     color:white;
 }
 h4{
     color:aqua;
     position:relative;
-    left:34px;
+    left:54px;
+    top:40px;
     font-size: 17px;
 }
 .validation{
         position: relative;
         padding:5px;
-        left: 30px;
-        top:-20px;
+        left: 50px;
+        top:10px;
         color:red;
 }
 input.ng-invalid.ng-touched{

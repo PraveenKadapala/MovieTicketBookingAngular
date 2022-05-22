@@ -1,42 +1,11 @@
-/* 
-.card{
-    border: none;
-    border-radius:3%;
-    width: 350px;
-    height:400px;
-    position: absolute;
-    padding: 20px;
-    top:20%;
-    left: 65%;
-    background: hsla(205, 46%, 50%, 1);
-    background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 14%, 1) 100%);
-    text-align: left;
+
+#image{
+    height: 100vh;
+    width: 100%;
 }
-
-
-label{
-    position: relative;
-    padding:5px;
-    display:grid;
-    left: 30px;
-    top:-20px;
-    color:black;
+.container1 {
+  position: relative;
 }
-
-input{
-    position: relative;
-    padding:5px;
-    display:grid;
-    text-align: center;
-    height:15px;
-    width: 250px;
-    left:30px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    top:-20px;
-} */
-
 .card{
     border: none;
     border-radius:3%;
@@ -44,8 +13,8 @@ input{
     height:430px;
     position: absolute;
     padding: 20px;
-    top:15%;
-    left: 65%;
+    top:17%;
+    left: 35%;
     background: hsla(205, 46%, 50%, 1);
     background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 14%, 1) 100%);
     text-align: left;

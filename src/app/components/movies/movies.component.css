@@ -14,8 +14,8 @@
     margin-right: 5px;
 }
 #image1:hover {
-    width:395px;
-    height:255px;
+    width:393px;
+    height:253px;
     }
 #image1:hover {
     box-shadow: 0 8px 16px 0 rgba(22, 22, 22, 0.849)
@@ -122,4 +122,21 @@ label{
   * {
     box-sizing: border-box;
   }
+  .column {
+    float:left;
+    width:28%;
+    padding: 0 2px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 5%;
+  }
   
+  /* .row {
+    margin: auto} */
+/*   
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
