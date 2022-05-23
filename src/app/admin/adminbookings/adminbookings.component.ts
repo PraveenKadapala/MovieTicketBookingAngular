@@ -13,7 +13,6 @@ export class AdminbookingsComponent implements OnInit {
   constructor(private adminservice:AdminService,public notifyservice:NotificationService) { }
 
   ondelete(location:any,movie:any,theater:any,showtiming:any,seats:any){
-    console.log(seats)
     try{
       this.adminservice.deletebooking(location,movie,theater,showtiming,seats).subscribe({next:(res:any)=>{
         if(res && res['status']=='ok'){

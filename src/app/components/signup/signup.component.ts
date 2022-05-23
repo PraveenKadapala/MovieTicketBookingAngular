@@ -33,6 +33,7 @@ export class SignupComponent implements OnInit {
       }
     }, error:(err)=>{
       if(err){
+        console.log(err + "some error")
         alert("Error Occured")
       }
       },

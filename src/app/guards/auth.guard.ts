@@ -18,8 +18,7 @@ export class AuthGuard implements CanActivate {
           this.apicallservice.login(true)
           if(localStorage.getItem("isadmin")=="true"){this.apicallservice.setisadmin(true)}
           return true
-        }else{
-          if(res['status']=="error"){
+        }else if(res['status']=="error"){
             this.apicallservice.renewaccesstoken({refreshtoken:localStorage.getItem("refreshtoken")}).subscribe({next:(response:any)=>{
               console.log(response,"renewaccesstoken response")
               if(response && response['status']=="ok"){
@@ -32,7 +31,11 @@ export class AuthGuard implements CanActivate {
                 return false
               }
             }})
-          }
+          }else{
+          alert("Please Authenticate")
+          this.router.navigate(['/login'])
+          this.apicallservice.userlogout()
+          return false
         }
       }
       })
